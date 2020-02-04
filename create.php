@@ -15,6 +15,21 @@ include 'layout/header.php'
        </div>
 
    </div>
+   <?php
+    if (!empty($_GET['success'])) {?>
+      <div class="row">
+        <div class="col-sm-6 col-sm-offset-6"> <?php
+        if ($_GET['success'] == 'true') { ?>
+          <div class="alert alert-success" role="alert">Stanza inserita</div>
+          <?php
+        } else { ?>
+          <div class="alert alert-danger" role="alert">Si è verificato un errore.
+          </div>
+          <?php
+        } ?>
+      </div>
+    </div>
+  <?php } ?>
    <div class="row">
      <div class="col-sm-12">
           <form method="POST" action="insert.php">

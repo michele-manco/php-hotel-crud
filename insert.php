@@ -32,6 +32,13 @@ if (
   $result = false;
 }
 
+if ($result) {
+  $get_message = '?success=true';
+} else {
+  $get_message = '?success=false';
+}
+
+header('Location: create.php' . $get_message);
 
 include 'layout/header.php'
 
