@@ -1,0 +1,1 @@
+pagina cancellazione stanza
