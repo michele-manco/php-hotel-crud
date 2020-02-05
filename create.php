@@ -1,4 +1,4 @@
-pagina creazione id_stanza
+
 <?php
 include 'layout/header.php'
  ?>
@@ -18,7 +18,7 @@ include 'layout/header.php'
    <?php
     if (!empty($_GET['success'])) {?>
       <div class="row">
-        <div class="col-sm-6 col-sm-offset-6"> <?php
+        <div class="col-sm-6 col-sm-offset-3"> <?php
         if ($_GET['success'] == 'true') { ?>
           <div class="alert alert-success" role="alert">Stanza inserita</div>
           <?php

@@ -1,6 +1,6 @@
 <?php
 
-
+include 'functions.php';
 if (
   // faccio tutti i controlli possibili x garantire validità dati
   !empty($_POST) &&

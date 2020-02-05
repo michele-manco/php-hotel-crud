@@ -19,6 +19,21 @@ include 'layout/header.php'
                 <a id="creastanza"class="btn btn-success" href="create.php">Crea nuova stanza</a>
             </div>
       </div>
+      <?php
+       if (!empty($_GET['success'])) {?>
+         <div class="row">
+           <div class="col-sm-6 col-sm-offset-3"> <?php
+           if ($_GET['success'] == 'true') { ?>
+             <div class="alert alert-success" role="alert">Stanza eliminata con successo</div>
+             <?php
+           } else { ?>
+             <div class="alert alert-danger" role="alert">Si è verificato un errore.
+             </div>
+             <?php
+           } ?>
+         </div>
+       </div>
+     <?php } ?>
       <div class="row">
         <div class="col-sm-12">
           <div class="table-responsive">
@@ -26,9 +41,9 @@ include 'layout/header.php'
                     <thead>
                       <tr>
                         <th scope="col">ID</th>
-                        <th scope="col">Numero stanza</th>
-                        <th scope="col">Piano</th>
-                        <th scope="col">Azioni</th>
+                        <th>Numero stanza</th>
+                        <th>Piano</th>
+                        <th>Azioni</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -38,7 +53,7 @@ include 'layout/header.php'
                       while($row = $result->fetch_assoc()) { ?>
                         <tr>
                           <td><?php echo $row['id']; ?></td>
-                          <td><?php echo $row['room number']; ?></td>
+                          <td><?php echo $row['room_number']; ?></td>
                           <td><?php echo $row['floor']; ?></td>
                           <td>
                             <a class="btn btn-info" href="details.php?id_stanza=<?php echo $row['id'] ?>">Visualizza</a>
